@@ -15,7 +15,7 @@ function DocumentView() {
     `md-${currentMarkdown?.id}`,
     currentMarkdown?.content
   );
-    console.log({docId, markdown, currentMarkdown})
+  
   useEffect(() => {
     return () => window.localStorage.removeItem('markdown');
   }, []);
@@ -26,6 +26,7 @@ function DocumentView() {
   const MarkdownEditor = (
     <Editor markdown={markdown} setMarkdown={setMarkdown} />
   );
+  
   return (
     <div>
       <SplitView left={MarkdownEditor} right={Preview} />
